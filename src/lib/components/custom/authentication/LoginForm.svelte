@@ -6,7 +6,7 @@
 	import { goto } from '$app/navigation';
 </script>
 
-<Card class="flex h-[460px] w-1/3 flex-col items-center justify-center">
+<Card class="flex h-[460px] flex-col items-center justify-center xl:w-1/2">
 	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Welcome back.</h1>
 	<div class="m-8 w-3/5">
 		<p class="leading-7 [&:not(:first-child)]:mt-6">NetID</p>

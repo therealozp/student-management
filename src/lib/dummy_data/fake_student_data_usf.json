@@ -1,0 +1,402 @@
+[
+	{
+		"name": "Jennifer Lara",
+		"uid": "U82365942",
+		"dob": 1029369600000,
+		"enrolled_courses": [91826, 91823],
+		"GPA": 2.06,
+		"email": "sharon94@usf.edu"
+	},
+	{
+		"name": "Barbara Booker",
+		"uid": "U25596304",
+		"dob": 1102377600000,
+		"enrolled_courses": [91824, 91825, 91828, 91823],
+		"GPA": 2.17,
+		"email": "cooleykimberly@usf.edu"
+	},
+	{
+		"name": "Mrs. Kelly Hanson",
+		"uid": "U91164909",
+		"dob": 1040169600000,
+		"enrolled_courses": [91823, 91825, 91828, 91824],
+		"GPA": 3.29,
+		"email": "bethanyolson@usf.edu"
+	},
+	{
+		"name": "Brooke Moran",
+		"uid": "U71096448",
+		"dob": 1152144000000,
+		"enrolled_courses": [91828],
+		"GPA": 2.84,
+		"email": "snyderlinda@usf.edu"
+	},
+	{
+		"name": "Alicia Baker",
+		"uid": "U92655509",
+		"dob": 1040083200000,
+		"enrolled_courses": [91828],
+		"GPA": 2.79,
+		"email": "christopherpena@usf.edu"
+	},
+	{
+		"name": "Robert Lewis",
+		"uid": "U17752351",
+		"dob": 942019200000,
+		"enrolled_courses": [91828, 91826, 91824, 91827],
+		"GPA": 2.71,
+		"email": "jbutler@usf.edu"
+	},
+	{
+		"name": "Stephanie Adams",
+		"uid": "U81021868",
+		"dob": 1020902400000,
+		"enrolled_courses": [91827, 91825],
+		"GPA": 3.98,
+		"email": "gillcatherine@usf.edu"
+	},
+	{
+		"name": "Mr. Jonathan Smith",
+		"uid": "U53594907",
+		"dob": 973728000000,
+		"enrolled_courses": [91825, 91823, 91826],
+		"GPA": 3.41,
+		"email": "asmith@usf.edu"
+	},
+	{
+		"name": "Courtney Schwartz",
+		"uid": "U35091123",
+		"dob": 1059264000000,
+		"enrolled_courses": [91824, 91823, 91827],
+		"GPA": 3.99,
+		"email": "moorejessica@usf.edu"
+	},
+	{
+		"name": "Justin Mclean",
+		"uid": "U22016568",
+		"dob": 1119312000000,
+		"enrolled_courses": [91825, 91823, 91827],
+		"GPA": 3.11,
+		"email": "ksteele@usf.edu"
+	},
+	{
+		"name": "Joseph Perez",
+		"uid": "U72995667",
+		"dob": 1053820800000,
+		"enrolled_courses": [91827, 91828, 91825, 91823],
+		"GPA": 3.87,
+		"email": "walshjerry@usf.edu"
+	},
+	{
+		"name": "Darren Hoover",
+		"uid": "U90531443",
+		"dob": 1119916800000,
+		"enrolled_courses": [91823],
+		"GPA": 2.13,
+		"email": "russellmark@usf.edu"
+	},
+	{
+		"name": "Phillip Garcia",
+		"uid": "U44321901",
+		"dob": 988675200000,
+		"enrolled_courses": [91825, 91828],
+		"GPA": 2.55,
+		"email": "pibarra@usf.edu"
+	},
+	{
+		"name": "Cody Gillespie",
+		"uid": "U51946401",
+		"dob": 1035331200000,
+		"enrolled_courses": [91825, 91827],
+		"GPA": 2.84,
+		"email": "mendozacaroline@usf.edu"
+	},
+	{
+		"name": "Dana Lopez",
+		"uid": "U82327635",
+		"dob": 933120000000,
+		"enrolled_courses": [91828],
+		"GPA": 3.44,
+		"email": "ivanheath@usf.edu"
+	},
+	{
+		"name": "Andrew Johnson",
+		"uid": "U70471770",
+		"dob": 1035417600000,
+		"enrolled_courses": [91823, 91826, 91827],
+		"GPA": 2.85,
+		"email": "larsonmartin@usf.edu"
+	},
+	{
+		"name": "Joseph Nichols",
+		"uid": "U44948187",
+		"dob": 1144454400000,
+		"enrolled_courses": [91825, 91824, 91828, 91826],
+		"GPA": 2.59,
+		"email": "charles17@usf.edu"
+	},
+	{
+		"name": "Sara Sanchez",
+		"uid": "U19564394",
+		"dob": 1016582400000,
+		"enrolled_courses": [91824, 91828, 91823, 91826],
+		"GPA": 3.35,
+		"email": "hamiltondavid@usf.edu"
+	},
+	{
+		"name": "Makayla Jackson",
+		"uid": "U65994952",
+		"dob": 1109894400000,
+		"enrolled_courses": [91825, 91828, 91826],
+		"GPA": 2.85,
+		"email": "clarktaylor@usf.edu"
+	},
+	{
+		"name": "Joshua Zhang",
+		"uid": "U89278598",
+		"dob": 917049600000,
+		"enrolled_courses": [91826, 91824, 91823],
+		"GPA": 2.6,
+		"email": "harriskent@usf.edu"
+	},
+	{
+		"name": "Phyllis Nelson",
+		"uid": "U60007175",
+		"dob": 914976000000,
+		"enrolled_courses": [91823, 91825, 91827],
+		"GPA": 2.67,
+		"email": "butlerandrea@usf.edu"
+	},
+	{
+		"name": "John Mcgee",
+		"uid": "U37860186",
+		"dob": 964396800000,
+		"enrolled_courses": [91828, 91823, 91824, 91825],
+		"GPA": 3.05,
+		"email": "xhaas@usf.edu"
+	},
+	{
+		"name": "Leah Burns",
+		"uid": "U88125623",
+		"dob": 1050278400000,
+		"enrolled_courses": [91825, 91823, 91824, 91828],
+		"GPA": 2.54,
+		"email": "ryanjones@usf.edu"
+	},
+	{
+		"name": "Matthew Doyle",
+		"uid": "U19823581",
+		"dob": 1053993600000,
+		"enrolled_courses": [91827],
+		"GPA": 3.16,
+		"email": "heathermoreno@usf.edu"
+	},
+	{
+		"name": "Holly Hernandez",
+		"uid": "U73010431",
+		"dob": 943488000000,
+		"enrolled_courses": [91823],
+		"GPA": 3.67,
+		"email": "thomasjohnson@usf.edu"
+	},
+	{
+		"name": "Teresa Herrera",
+		"uid": "U68692578",
+		"dob": 907545600000,
+		"enrolled_courses": [91828, 91823],
+		"GPA": 3.87,
+		"email": "garrett58@usf.edu"
+	},
+	{
+		"name": "Ryan Dodson",
+		"uid": "U85857686",
+		"dob": 1059350400000,
+		"enrolled_courses": [91824, 91828],
+		"GPA": 2.1,
+		"email": "znguyen@usf.edu"
+	},
+	{
+		"name": "Amber Morrison",
+		"uid": "U40197721",
+		"dob": 961632000000,
+		"enrolled_courses": [91827, 91824, 91826],
+		"GPA": 2.95,
+		"email": "garciamatthew@usf.edu"
+	},
+	{
+		"name": "Cindy Villa",
+		"uid": "U66907393",
+		"dob": 1049155200000,
+		"enrolled_courses": [91826],
+		"GPA": 3.0,
+		"email": "christinalewis@usf.edu"
+	},
+	{
+		"name": "Amanda Lang",
+		"uid": "U42140571",
+		"dob": 1055894400000,
+		"enrolled_courses": [91823, 91824],
+		"GPA": 3.02,
+		"email": "rick42@usf.edu"
+	},
+	{
+		"name": "John Clark",
+		"uid": "U94783271",
+		"dob": 1123027200000,
+		"enrolled_courses": [91828, 91823, 91824, 91826],
+		"GPA": 2.67,
+		"email": "jacqueline19@usf.edu"
+	},
+	{
+		"name": "Leon Smith",
+		"uid": "U45629830",
+		"dob": 1063411200000,
+		"enrolled_courses": [91828, 91824, 91823, 91826],
+		"GPA": 3.26,
+		"email": "rachelhoffman@usf.edu"
+	},
+	{
+		"name": "Ashley Blankenship",
+		"uid": "U71852963",
+		"dob": 1123286400000,
+		"enrolled_courses": [91828, 91825],
+		"GPA": 2.75,
+		"email": "ronald50@usf.edu"
+	},
+	{
+		"name": "Amber Rodriguez",
+		"uid": "U54368572",
+		"dob": 990835200000,
+		"enrolled_courses": [91826],
+		"GPA": 2.89,
+		"email": "aprilflores@usf.edu"
+	},
+	{
+		"name": "Christopher Barber",
+		"uid": "U99432280",
+		"dob": 955411200000,
+		"enrolled_courses": [91828],
+		"GPA": 3.11,
+		"email": "crystal49@usf.edu"
+	},
+	{
+		"name": "George Cantrell",
+		"uid": "U56547075",
+		"dob": 1096848000000,
+		"enrolled_courses": [91828],
+		"GPA": 2.57,
+		"email": "zwilson@usf.edu"
+	},
+	{
+		"name": "Kevin West",
+		"uid": "U67388869",
+		"dob": 930700800000,
+		"enrolled_courses": [91828, 91824],
+		"GPA": 2.25,
+		"email": "carlosadams@usf.edu"
+	},
+	{
+		"name": "Jasmine Stewart",
+		"uid": "U35865768",
+		"dob": 1044662400000,
+		"enrolled_courses": [91824, 91826, 91825, 91828],
+		"GPA": 3.28,
+		"email": "adamsjacob@usf.edu"
+	},
+	{
+		"name": "Joan Simmons",
+		"uid": "U89077723",
+		"dob": 1143676800000,
+		"enrolled_courses": [91826, 91828, 91824],
+		"GPA": 3.78,
+		"email": "arellanopeter@usf.edu"
+	},
+	{
+		"name": "Cheryl Young",
+		"uid": "U12300029",
+		"dob": 956966400000,
+		"enrolled_courses": [91826, 91828],
+		"GPA": 3.44,
+		"email": "michael57@usf.edu"
+	},
+	{
+		"name": "Gabrielle Patterson",
+		"uid": "U98258265",
+		"dob": 1076716800000,
+		"enrolled_courses": [91827, 91825, 91828, 91824],
+		"GPA": 3.74,
+		"email": "eric98@usf.edu"
+	},
+	{
+		"name": "Abigail Reyes",
+		"uid": "U43018889",
+		"dob": 1116547200000,
+		"enrolled_courses": [91826, 91828, 91823],
+		"GPA": 2.65,
+		"email": "frostantonio@usf.edu"
+	},
+	{
+		"name": "Shannon Mcdonald",
+		"uid": "U43760546",
+		"dob": 1130630400000,
+		"enrolled_courses": [91828, 91823, 91827, 91826],
+		"GPA": 3.37,
+		"email": "bryantcindy@usf.edu"
+	},
+	{
+		"name": "Rachel Robinson",
+		"uid": "U27991941",
+		"dob": 1138579200000,
+		"enrolled_courses": [91826, 91825],
+		"GPA": 3.67,
+		"email": "vcarpenter@usf.edu"
+	},
+	{
+		"name": "Justin Perez",
+		"uid": "U49232597",
+		"dob": 985737600000,
+		"enrolled_courses": [91826, 91825, 91823],
+		"GPA": 2.28,
+		"email": "oross@usf.edu"
+	},
+	{
+		"name": "Lisa Huber",
+		"uid": "U93885070",
+		"dob": 992822400000,
+		"enrolled_courses": [91826, 91824],
+		"GPA": 3.62,
+		"email": "josephtanya@usf.edu"
+	},
+	{
+		"name": "Keith Evans",
+		"uid": "U83787256",
+		"dob": 1082419200000,
+		"enrolled_courses": [91828],
+		"GPA": 2.9,
+		"email": "gallowayamanda@usf.edu"
+	},
+	{
+		"name": "Kevin Pearson",
+		"uid": "U27667785",
+		"dob": 1020556800000,
+		"enrolled_courses": [91826],
+		"GPA": 2.8,
+		"email": "karencastillo@usf.edu"
+	},
+	{
+		"name": "Lisa Edwards",
+		"uid": "U49092330",
+		"dob": 920332800000,
+		"enrolled_courses": [91828, 91825, 91826, 91823],
+		"GPA": 3.56,
+		"email": "vsanders@usf.edu"
+	},
+	{
+		"name": "Ebony Todd",
+		"uid": "U52484074",
+		"dob": 980467200000,
+		"enrolled_courses": [91824, 91823, 91828, 91825],
+		"GPA": 3.4,
+		"email": "kwise@usf.edu"
+	}
+]
