@@ -1,0 +1,502 @@
+[
+	{
+		"course_name": "Intro to Computer Science",
+		"course_code": "COP1000",
+		"CRN": 60336,
+		"capacity": 78,
+		"overridable": true,
+		"waitlisted": 1,
+		"current_instructor": "Instructor 1",
+		"section_number": 4
+	},
+	{
+		"course_name": "Object-Oriented Programming",
+		"course_code": "COP1001",
+		"CRN": 95314,
+		"capacity": 81,
+		"overridable": false,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 2",
+		"section_number": 1
+	},
+	{
+		"course_name": "Data Structures and Algorithms",
+		"course_code": "COP1002",
+		"CRN": 36641,
+		"capacity": 71,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 3",
+		"section_number": 3
+	},
+	{
+		"course_name": "Operating Systems",
+		"course_code": "COP1003",
+		"CRN": 44584,
+		"capacity": 99,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 4",
+		"section_number": 1
+	},
+	{
+		"course_name": "Computer Networks",
+		"course_code": "COP1004",
+		"CRN": 42745,
+		"capacity": 44,
+		"overridable": false,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 5",
+		"section_number": 3
+	},
+	{
+		"course_name": "Software Engineering",
+		"course_code": "COP1005",
+		"CRN": 33093,
+		"capacity": 83,
+		"overridable": true,
+		"waitlisted": 4,
+		"current_instructor": "Instructor 6",
+		"section_number": 1
+	},
+	{
+		"course_name": "Database Systems",
+		"course_code": "COP1006",
+		"CRN": 76105,
+		"capacity": 89,
+		"overridable": false,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 7",
+		"section_number": 3
+	},
+	{
+		"course_name": "Artificial Intelligence",
+		"course_code": "COP1007",
+		"CRN": 61885,
+		"capacity": 37,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 8",
+		"section_number": 1
+	},
+	{
+		"course_name": "Machine Learning",
+		"course_code": "COP1008",
+		"CRN": 46631,
+		"capacity": 82,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 9",
+		"section_number": 2
+	},
+	{
+		"course_name": "Human-Computer Interaction",
+		"course_code": "COP1009",
+		"CRN": 82991,
+		"capacity": 89,
+		"overridable": false,
+		"waitlisted": 7,
+		"current_instructor": "Instructor 10",
+		"section_number": 1
+	},
+	{
+		"course_name": "Mobile Application Development",
+		"course_code": "COP1010",
+		"CRN": 14014,
+		"capacity": 34,
+		"overridable": false,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 11",
+		"section_number": 1
+	},
+	{
+		"course_name": "Web Development",
+		"course_code": "COP1011",
+		"CRN": 21093,
+		"capacity": 97,
+		"overridable": true,
+		"waitlisted": 1,
+		"current_instructor": "Instructor 12",
+		"section_number": 2
+	},
+	{
+		"course_name": "Cloud Computing",
+		"course_code": "COP1012",
+		"CRN": 28070,
+		"capacity": 35,
+		"overridable": true,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 13",
+		"section_number": 4
+	},
+	{
+		"course_name": "Cybersecurity",
+		"course_code": "COP1013",
+		"CRN": 45777,
+		"capacity": 76,
+		"overridable": false,
+		"waitlisted": 1,
+		"current_instructor": "Instructor 14",
+		"section_number": 4
+	},
+	{
+		"course_name": "Digital Logic Design",
+		"course_code": "COP1014",
+		"CRN": 66958,
+		"capacity": 84,
+		"overridable": true,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 15",
+		"section_number": 1
+	},
+	{
+		"course_name": "Compiler Design",
+		"course_code": "COP1015",
+		"CRN": 92074,
+		"capacity": 69,
+		"overridable": false,
+		"waitlisted": 6,
+		"current_instructor": "Instructor 16",
+		"section_number": 2
+	},
+	{
+		"course_name": "Theory of Computation",
+		"course_code": "COP1016",
+		"CRN": 20729,
+		"capacity": 81,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 17",
+		"section_number": 1
+	},
+	{
+		"course_name": "Game Development",
+		"course_code": "COP1017",
+		"CRN": 55017,
+		"capacity": 45,
+		"overridable": true,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 18",
+		"section_number": 3
+	},
+	{
+		"course_name": "Robotics Programming",
+		"course_code": "COP1018",
+		"CRN": 76320,
+		"capacity": 42,
+		"overridable": true,
+		"waitlisted": 7,
+		"current_instructor": "Instructor 19",
+		"section_number": 3
+	},
+	{
+		"course_name": "Parallel Computing",
+		"course_code": "COP1019",
+		"CRN": 37751,
+		"capacity": 59,
+		"overridable": false,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 20",
+		"section_number": 1
+	},
+	{
+		"course_name": "Quantum Computing",
+		"course_code": "COP1020",
+		"CRN": 88069,
+		"capacity": 48,
+		"overridable": false,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 21",
+		"section_number": 4
+	},
+	{
+		"course_name": "Advanced Database Systems",
+		"course_code": "COP1021",
+		"CRN": 64748,
+		"capacity": 46,
+		"overridable": false,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 22",
+		"section_number": 4
+	},
+	{
+		"course_name": "Distributed Systems",
+		"course_code": "COP1022",
+		"CRN": 15801,
+		"capacity": 92,
+		"overridable": true,
+		"waitlisted": 1,
+		"current_instructor": "Instructor 23",
+		"section_number": 1
+	},
+	{
+		"course_name": "Software Testing and Quality Assurance",
+		"course_code": "COP1023",
+		"CRN": 29190,
+		"capacity": 48,
+		"overridable": false,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 24",
+		"section_number": 1
+	},
+	{
+		"course_name": "Network Security",
+		"course_code": "COP1024",
+		"CRN": 59689,
+		"capacity": 87,
+		"overridable": false,
+		"waitlisted": 8,
+		"current_instructor": "Instructor 25",
+		"section_number": 3
+	},
+	{
+		"course_name": "Ethical Hacking",
+		"course_code": "COP1025",
+		"CRN": 60993,
+		"capacity": 84,
+		"overridable": false,
+		"waitlisted": 6,
+		"current_instructor": "Instructor 26",
+		"section_number": 4
+	},
+	{
+		"course_name": "Advanced Algorithms",
+		"course_code": "COP1026",
+		"CRN": 39592,
+		"capacity": 91,
+		"overridable": true,
+		"waitlisted": 3,
+		"current_instructor": "Instructor 27",
+		"section_number": 1
+	},
+	{
+		"course_name": "Cryptography",
+		"course_code": "COP1027",
+		"CRN": 20647,
+		"capacity": 52,
+		"overridable": false,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 28",
+		"section_number": 3
+	},
+	{
+		"course_name": "Blockchain Technologies",
+		"course_code": "COP1028",
+		"CRN": 18716,
+		"capacity": 38,
+		"overridable": false,
+		"waitlisted": 4,
+		"current_instructor": "Instructor 29",
+		"section_number": 4
+	},
+	{
+		"course_name": "Augmented Reality Development",
+		"course_code": "COP1029",
+		"CRN": 98891,
+		"capacity": 41,
+		"overridable": true,
+		"waitlisted": 1,
+		"current_instructor": "Instructor 30",
+		"section_number": 2
+	},
+	{
+		"course_name": "Virtual Reality Programming",
+		"course_code": "COP1030",
+		"CRN": 97545,
+		"capacity": 30,
+		"overridable": false,
+		"waitlisted": 7,
+		"current_instructor": "Instructor 31",
+		"section_number": 3
+	},
+	{
+		"course_name": "Internet of Things (IoT) Systems",
+		"course_code": "COP1031",
+		"CRN": 99912,
+		"capacity": 87,
+		"overridable": false,
+		"waitlisted": 3,
+		"current_instructor": "Instructor 32",
+		"section_number": 4
+	},
+	{
+		"course_name": "Embedded Systems",
+		"course_code": "COP1032",
+		"CRN": 80316,
+		"capacity": 30,
+		"overridable": true,
+		"waitlisted": 8,
+		"current_instructor": "Instructor 33",
+		"section_number": 4
+	},
+	{
+		"course_name": "Digital Image Processing",
+		"course_code": "COP1033",
+		"CRN": 12368,
+		"capacity": 63,
+		"overridable": false,
+		"waitlisted": 4,
+		"current_instructor": "Instructor 34",
+		"section_number": 3
+	},
+	{
+		"course_name": "Computational Biology",
+		"course_code": "COP1034",
+		"CRN": 87575,
+		"capacity": 77,
+		"overridable": true,
+		"waitlisted": 8,
+		"current_instructor": "Instructor 35",
+		"section_number": 2
+	},
+	{
+		"course_name": "Autonomous Systems",
+		"course_code": "COP1035",
+		"CRN": 16655,
+		"capacity": 30,
+		"overridable": true,
+		"waitlisted": 3,
+		"current_instructor": "Instructor 36",
+		"section_number": 3
+	},
+	{
+		"course_name": "Big Data Analytics",
+		"course_code": "COP1036",
+		"CRN": 80031,
+		"capacity": 45,
+		"overridable": false,
+		"waitlisted": 9,
+		"current_instructor": "Instructor 37",
+		"section_number": 4
+	},
+	{
+		"course_name": "Natural Language Processing",
+		"course_code": "COP1037",
+		"CRN": 86429,
+		"capacity": 90,
+		"overridable": false,
+		"waitlisted": 4,
+		"current_instructor": "Instructor 38",
+		"section_number": 1
+	},
+	{
+		"course_name": "Computer Vision",
+		"course_code": "COP1038",
+		"CRN": 97922,
+		"capacity": 93,
+		"overridable": false,
+		"waitlisted": 8,
+		"current_instructor": "Instructor 39",
+		"section_number": 1
+	},
+	{
+		"course_name": "Data Mining",
+		"course_code": "COP1039",
+		"CRN": 65766,
+		"capacity": 92,
+		"overridable": false,
+		"waitlisted": 7,
+		"current_instructor": "Instructor 40",
+		"section_number": 3
+	},
+	{
+		"course_name": "Bioinformatics",
+		"course_code": "COP1040",
+		"CRN": 23403,
+		"capacity": 98,
+		"overridable": true,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 41",
+		"section_number": 4
+	},
+	{
+		"course_name": "Advanced Computer Architecture",
+		"course_code": "COP1041",
+		"CRN": 42097,
+		"capacity": 51,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 42",
+		"section_number": 1
+	},
+	{
+		"course_name": "Wireless Networks",
+		"course_code": "COP1042",
+		"CRN": 88657,
+		"capacity": 96,
+		"overridable": true,
+		"waitlisted": 2,
+		"current_instructor": "Instructor 43",
+		"section_number": 4
+	},
+	{
+		"course_name": "Real-Time Systems",
+		"course_code": "COP1043",
+		"CRN": 20966,
+		"capacity": 55,
+		"overridable": false,
+		"waitlisted": 3,
+		"current_instructor": "Instructor 44",
+		"section_number": 3
+	},
+	{
+		"course_name": "Digital Forensics",
+		"course_code": "COP1044",
+		"CRN": 62921,
+		"capacity": 45,
+		"overridable": false,
+		"waitlisted": 1,
+		"current_instructor": "Instructor 45",
+		"section_number": 1
+	},
+	{
+		"course_name": "Software Project Management",
+		"course_code": "COP1045",
+		"CRN": 59726,
+		"capacity": 80,
+		"overridable": false,
+		"waitlisted": 0,
+		"current_instructor": "Instructor 46",
+		"section_number": 4
+	},
+	{
+		"course_name": "DevOps Engineering",
+		"course_code": "COP1046",
+		"CRN": 60300,
+		"capacity": 86,
+		"overridable": true,
+		"waitlisted": 6,
+		"current_instructor": "Instructor 47",
+		"section_number": 1
+	},
+	{
+		"course_name": "Information Retrieval",
+		"course_code": "COP1047",
+		"CRN": 32677,
+		"capacity": 58,
+		"overridable": false,
+		"waitlisted": 7,
+		"current_instructor": "Instructor 48",
+		"section_number": 3
+	},
+	{
+		"course_name": "Deep Learning",
+		"course_code": "COP1048",
+		"CRN": 65609,
+		"capacity": 98,
+		"overridable": false,
+		"waitlisted": 6,
+		"current_instructor": "Instructor 49",
+		"section_number": 4
+	},
+	{
+		"course_name": "Virtualization and Cloud Infrastructure",
+		"course_code": "COP1049",
+		"CRN": 66661,
+		"capacity": 76,
+		"overridable": false,
+		"waitlisted": 4,
+		"current_instructor": "Instructor 50",
+		"section_number": 1
+	}
+]

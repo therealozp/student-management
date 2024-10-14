@@ -1,0 +1,695 @@
+[
+    {
+        "year": 2015,
+        "major": "Overall",
+        "avg_gpa": 2.97,
+        "graduates": 237,
+        "dropouts": 50
+    },
+    {
+        "year": 2015,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 2.78,
+        "graduates": 179,
+        "dropouts": 28
+    },
+    {
+        "year": 2015,
+        "major": "Electrical Engineering",
+        "avg_gpa": 3.07,
+        "graduates": 105,
+        "dropouts": 42
+    },
+    {
+        "year": 2015,
+        "major": "Computer Science",
+        "avg_gpa": 3.13,
+        "graduates": 214,
+        "dropouts": 9
+    },
+    {
+        "year": 2015,
+        "major": "Civil Engineering",
+        "avg_gpa": 3.18,
+        "graduates": 268,
+        "dropouts": 36
+    },
+    {
+        "year": 2015,
+        "major": "Chemical Engineering",
+        "avg_gpa": 3.74,
+        "graduates": 62,
+        "dropouts": 19
+    },
+    {
+        "year": 2015,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 2.59,
+        "graduates": 139,
+        "dropouts": 46
+    },
+    {
+        "year": 2015,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.43,
+        "graduates": 238,
+        "dropouts": 46
+    },
+    {
+        "year": 2015,
+        "major": "Environmental Engineering",
+        "avg_gpa": 2.52,
+        "graduates": 178,
+        "dropouts": 47
+    },
+    {
+        "year": 2015,
+        "major": "Industrial Engineering",
+        "avg_gpa": 2.88,
+        "graduates": 277,
+        "dropouts": 27
+    },
+    {
+        "year": 2015,
+        "major": "Materials Engineering",
+        "avg_gpa": 3.14,
+        "graduates": 273,
+        "dropouts": 17
+    },
+    {
+        "year": 2016,
+        "major": "Overall",
+        "avg_gpa": 3.31,
+        "graduates": 119,
+        "dropouts": 9
+    },
+    {
+        "year": 2016,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 3.81,
+        "graduates": 250,
+        "dropouts": 32
+    },
+    {
+        "year": 2016,
+        "major": "Electrical Engineering",
+        "avg_gpa": 2.73,
+        "graduates": 182,
+        "dropouts": 33
+    },
+    {
+        "year": 2016,
+        "major": "Computer Science",
+        "avg_gpa": 3.4,
+        "graduates": 183,
+        "dropouts": 25
+    },
+    {
+        "year": 2016,
+        "major": "Civil Engineering",
+        "avg_gpa": 3.7,
+        "graduates": 299,
+        "dropouts": 7
+    },
+    {
+        "year": 2016,
+        "major": "Chemical Engineering",
+        "avg_gpa": 2.92,
+        "graduates": 212,
+        "dropouts": 18
+    },
+    {
+        "year": 2016,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 3.51,
+        "graduates": 114,
+        "dropouts": 16
+    },
+    {
+        "year": 2016,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.88,
+        "graduates": 144,
+        "dropouts": 50
+    },
+    {
+        "year": 2016,
+        "major": "Environmental Engineering",
+        "avg_gpa": 3.19,
+        "graduates": 273,
+        "dropouts": 20
+    },
+    {
+        "year": 2016,
+        "major": "Industrial Engineering",
+        "avg_gpa": 3.87,
+        "graduates": 290,
+        "dropouts": 6
+    },
+    {
+        "year": 2016,
+        "major": "Materials Engineering",
+        "avg_gpa": 2.83,
+        "graduates": 234,
+        "dropouts": 23
+    },
+    {
+        "year": 2017,
+        "major": "Overall",
+        "avg_gpa": 2.87,
+        "graduates": 66,
+        "dropouts": 28
+    },
+    {
+        "year": 2017,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 3.42,
+        "graduates": 204,
+        "dropouts": 39
+    },
+    {
+        "year": 2017,
+        "major": "Electrical Engineering",
+        "avg_gpa": 3.57,
+        "graduates": 261,
+        "dropouts": 46
+    },
+    {
+        "year": 2017,
+        "major": "Computer Science",
+        "avg_gpa": 3.39,
+        "graduates": 262,
+        "dropouts": 17
+    },
+    {
+        "year": 2017,
+        "major": "Civil Engineering",
+        "avg_gpa": 2.8,
+        "graduates": 163,
+        "dropouts": 22
+    },
+    {
+        "year": 2017,
+        "major": "Chemical Engineering",
+        "avg_gpa": 2.76,
+        "graduates": 173,
+        "dropouts": 35
+    },
+    {
+        "year": 2017,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 2.58,
+        "graduates": 298,
+        "dropouts": 42
+    },
+    {
+        "year": 2017,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 2.84,
+        "graduates": 181,
+        "dropouts": 48
+    },
+    {
+        "year": 2017,
+        "major": "Environmental Engineering",
+        "avg_gpa": 2.87,
+        "graduates": 276,
+        "dropouts": 47
+    },
+    {
+        "year": 2017,
+        "major": "Industrial Engineering",
+        "avg_gpa": 3.96,
+        "graduates": 52,
+        "dropouts": 24
+    },
+    {
+        "year": 2017,
+        "major": "Materials Engineering",
+        "avg_gpa": 3.17,
+        "graduates": 169,
+        "dropouts": 34
+    },
+    {
+        "year": 2018,
+        "major": "Overall",
+        "avg_gpa": 3.23,
+        "graduates": 130,
+        "dropouts": 30
+    },
+    {
+        "year": 2018,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 2.58,
+        "graduates": 129,
+        "dropouts": 38
+    },
+    {
+        "year": 2018,
+        "major": "Electrical Engineering",
+        "avg_gpa": 3.73,
+        "graduates": 128,
+        "dropouts": 38
+    },
+    {
+        "year": 2018,
+        "major": "Computer Science",
+        "avg_gpa": 2.68,
+        "graduates": 220,
+        "dropouts": 33
+    },
+    {
+        "year": 2018,
+        "major": "Civil Engineering",
+        "avg_gpa": 3.27,
+        "graduates": 249,
+        "dropouts": 40
+    },
+    {
+        "year": 2018,
+        "major": "Chemical Engineering",
+        "avg_gpa": 3.9,
+        "graduates": 51,
+        "dropouts": 26
+    },
+    {
+        "year": 2018,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 3.62,
+        "graduates": 195,
+        "dropouts": 15
+    },
+    {
+        "year": 2018,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.19,
+        "graduates": 210,
+        "dropouts": 49
+    },
+    {
+        "year": 2018,
+        "major": "Environmental Engineering",
+        "avg_gpa": 3.05,
+        "graduates": 261,
+        "dropouts": 6
+    },
+    {
+        "year": 2018,
+        "major": "Industrial Engineering",
+        "avg_gpa": 2.83,
+        "graduates": 213,
+        "dropouts": 29
+    },
+    {
+        "year": 2018,
+        "major": "Materials Engineering",
+        "avg_gpa": 2.53,
+        "graduates": 62,
+        "dropouts": 7
+    },
+    {
+        "year": 2019,
+        "major": "Overall",
+        "avg_gpa": 2.54,
+        "graduates": 120,
+        "dropouts": 40
+    },
+    {
+        "year": 2019,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 2.95,
+        "graduates": 247,
+        "dropouts": 24
+    },
+    {
+        "year": 2019,
+        "major": "Electrical Engineering",
+        "avg_gpa": 3.15,
+        "graduates": 80,
+        "dropouts": 42
+    },
+    {
+        "year": 2019,
+        "major": "Computer Science",
+        "avg_gpa": 3.47,
+        "graduates": 60,
+        "dropouts": 33
+    },
+    {
+        "year": 2019,
+        "major": "Civil Engineering",
+        "avg_gpa": 3.06,
+        "graduates": 223,
+        "dropouts": 43
+    },
+    {
+        "year": 2019,
+        "major": "Chemical Engineering",
+        "avg_gpa": 3.15,
+        "graduates": 260,
+        "dropouts": 39
+    },
+    {
+        "year": 2019,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 3.32,
+        "graduates": 76,
+        "dropouts": 20
+    },
+    {
+        "year": 2019,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.07,
+        "graduates": 140,
+        "dropouts": 48
+    },
+    {
+        "year": 2019,
+        "major": "Environmental Engineering",
+        "avg_gpa": 3.63,
+        "graduates": 206,
+        "dropouts": 7
+    },
+    {
+        "year": 2019,
+        "major": "Industrial Engineering",
+        "avg_gpa": 2.88,
+        "graduates": 132,
+        "dropouts": 50
+    },
+    {
+        "year": 2019,
+        "major": "Materials Engineering",
+        "avg_gpa": 3.62,
+        "graduates": 89,
+        "dropouts": 24
+    },
+    {
+        "year": 2020,
+        "major": "Overall",
+        "avg_gpa": 2.64,
+        "graduates": 201,
+        "dropouts": 29
+    },
+    {
+        "year": 2020,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 2.78,
+        "graduates": 198,
+        "dropouts": 20
+    },
+    {
+        "year": 2020,
+        "major": "Electrical Engineering",
+        "avg_gpa": 2.74,
+        "graduates": 231,
+        "dropouts": 34
+    },
+    {
+        "year": 2020,
+        "major": "Computer Science",
+        "avg_gpa": 2.76,
+        "graduates": 153,
+        "dropouts": 45
+    },
+    {
+        "year": 2020,
+        "major": "Civil Engineering",
+        "avg_gpa": 3.63,
+        "graduates": 51,
+        "dropouts": 47
+    },
+    {
+        "year": 2020,
+        "major": "Chemical Engineering",
+        "avg_gpa": 2.65,
+        "graduates": 190,
+        "dropouts": 17
+    },
+    {
+        "year": 2020,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 3.09,
+        "graduates": 214,
+        "dropouts": 45
+    },
+    {
+        "year": 2020,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.95,
+        "graduates": 127,
+        "dropouts": 18
+    },
+    {
+        "year": 2020,
+        "major": "Environmental Engineering",
+        "avg_gpa": 3.0,
+        "graduates": 256,
+        "dropouts": 21
+    },
+    {
+        "year": 2020,
+        "major": "Industrial Engineering",
+        "avg_gpa": 2.85,
+        "graduates": 213,
+        "dropouts": 41
+    },
+    {
+        "year": 2020,
+        "major": "Materials Engineering",
+        "avg_gpa": 3.59,
+        "graduates": 263,
+        "dropouts": 15
+    },
+    {
+        "year": 2021,
+        "major": "Overall",
+        "avg_gpa": 3.59,
+        "graduates": 283,
+        "dropouts": 41
+    },
+    {
+        "year": 2021,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 3.26,
+        "graduates": 150,
+        "dropouts": 40
+    },
+    {
+        "year": 2021,
+        "major": "Electrical Engineering",
+        "avg_gpa": 2.6,
+        "graduates": 166,
+        "dropouts": 49
+    },
+    {
+        "year": 2021,
+        "major": "Computer Science",
+        "avg_gpa": 3.64,
+        "graduates": 56,
+        "dropouts": 32
+    },
+    {
+        "year": 2021,
+        "major": "Civil Engineering",
+        "avg_gpa": 2.79,
+        "graduates": 177,
+        "dropouts": 50
+    },
+    {
+        "year": 2021,
+        "major": "Chemical Engineering",
+        "avg_gpa": 2.79,
+        "graduates": 273,
+        "dropouts": 9
+    },
+    {
+        "year": 2021,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 2.51,
+        "graduates": 95,
+        "dropouts": 32
+    },
+    {
+        "year": 2021,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.87,
+        "graduates": 59,
+        "dropouts": 35
+    },
+    {
+        "year": 2021,
+        "major": "Environmental Engineering",
+        "avg_gpa": 3.35,
+        "graduates": 250,
+        "dropouts": 24
+    },
+    {
+        "year": 2021,
+        "major": "Industrial Engineering",
+        "avg_gpa": 3.4,
+        "graduates": 148,
+        "dropouts": 29
+    },
+    {
+        "year": 2021,
+        "major": "Materials Engineering",
+        "avg_gpa": 2.66,
+        "graduates": 225,
+        "dropouts": 29
+    },
+    {
+        "year": 2022,
+        "major": "Overall",
+        "avg_gpa": 3.87,
+        "graduates": 66,
+        "dropouts": 11
+    },
+    {
+        "year": 2022,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 2.6,
+        "graduates": 151,
+        "dropouts": 35
+    },
+    {
+        "year": 2022,
+        "major": "Electrical Engineering",
+        "avg_gpa": 2.67,
+        "graduates": 219,
+        "dropouts": 21
+    },
+    {
+        "year": 2022,
+        "major": "Computer Science",
+        "avg_gpa": 3.92,
+        "graduates": 118,
+        "dropouts": 32
+    },
+    {
+        "year": 2022,
+        "major": "Civil Engineering",
+        "avg_gpa": 2.94,
+        "graduates": 141,
+        "dropouts": 47
+    },
+    {
+        "year": 2022,
+        "major": "Chemical Engineering",
+        "avg_gpa": 3.9,
+        "graduates": 143,
+        "dropouts": 27
+    },
+    {
+        "year": 2022,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 2.83,
+        "graduates": 96,
+        "dropouts": 15
+    },
+    {
+        "year": 2022,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.73,
+        "graduates": 211,
+        "dropouts": 7
+    },
+    {
+        "year": 2022,
+        "major": "Environmental Engineering",
+        "avg_gpa": 2.82,
+        "graduates": 278,
+        "dropouts": 12
+    },
+    {
+        "year": 2022,
+        "major": "Industrial Engineering",
+        "avg_gpa": 3.43,
+        "graduates": 174,
+        "dropouts": 34
+    },
+    {
+        "year": 2022,
+        "major": "Materials Engineering",
+        "avg_gpa": 3.83,
+        "graduates": 197,
+        "dropouts": 9
+    },
+    {
+        "year": 2023,
+        "major": "Overall",
+        "avg_gpa": 3.32,
+        "graduates": 108,
+        "dropouts": 39
+    },
+    {
+        "year": 2023,
+        "major": "Mechanical Engineering",
+        "avg_gpa": 3.01,
+        "graduates": 230,
+        "dropouts": 21
+    },
+    {
+        "year": 2023,
+        "major": "Electrical Engineering",
+        "avg_gpa": 3.85,
+        "graduates": 114,
+        "dropouts": 37
+    },
+    {
+        "year": 2023,
+        "major": "Computer Science",
+        "avg_gpa": 2.78,
+        "graduates": 300,
+        "dropouts": 21
+    },
+    {
+        "year": 2023,
+        "major": "Civil Engineering",
+        "avg_gpa": 3.9,
+        "graduates": 85,
+        "dropouts": 11
+    },
+    {
+        "year": 2023,
+        "major": "Chemical Engineering",
+        "avg_gpa": 2.84,
+        "graduates": 57,
+        "dropouts": 50
+    },
+    {
+        "year": 2023,
+        "major": "Aerospace Engineering",
+        "avg_gpa": 3.57,
+        "graduates": 96,
+        "dropouts": 24
+    },
+    {
+        "year": 2023,
+        "major": "Biomedical Engineering",
+        "avg_gpa": 3.8,
+        "graduates": 262,
+        "dropouts": 32
+    },
+    {
+        "year": 2023,
+        "major": "Environmental Engineering",
+        "avg_gpa": 2.74,
+        "graduates": 163,
+        "dropouts": 44
+    },
+    {
+        "year": 2023,
+        "major": "Industrial Engineering",
+        "avg_gpa": 3.82,
+        "graduates": 120,
+        "dropouts": 49
+    },
+    {
+        "year": 2023,
+        "major": "Materials Engineering",
+        "avg_gpa": 3.22,
+        "graduates": 288,
+        "dropouts": 43
+    }
+]
