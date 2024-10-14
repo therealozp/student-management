@@ -1,17 +1,16 @@
 <script>
-	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import Header from '../dashboard/Header.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 
-	import students from '$lib/dummy_data/fake_student_data_usf.json';
+	import courses from '$lib/dummy_data/fake_enrollment_sections.json';
 	import { createTable, Subscribe, Render } from 'svelte-headless-table';
 	import { addPagination, addTableFilter } from 'svelte-headless-table/plugins';
 	import { readable } from 'svelte/store';
 
-	const tableHeaders = Object.keys(students[0]);
-	const tableData = createTable(readable(students), {
+	const tableHeaders = Object.keys(courses[0]);
+	const tableData = createTable(readable(courses), {
 		paginate: addPagination(),
 		filter: addTableFilter({
 			fn: ({ filterValue, value }) => value.toLowerCase().includes(filterValue.toLowerCase())
@@ -20,41 +19,36 @@
 
 	const columns = tableData.createColumns([
 		tableData.column({
-			accessor: 'name',
-			header: 'Name'
+			accessor: 'CRN',
+			header: 'CRN'
 		}),
 		tableData.column({
-			accessor: 'uid',
-			header: 'USF ID'
+			accessor: 'course_code',
+			header: 'Course Code'
 		}),
 		tableData.column({
-			accessor: 'email',
-			header: 'Email'
+			accessor: 'course_name',
+			header: 'Course Name'
 		}),
 		tableData.column({
-			accessor: 'dob',
-			header: 'DOB',
-			cell: ({ value }) => {
-				const date = new Date(value);
-				return date.toLocaleDateString();
-			},
-			filter: {
-				exclude: true
-			}
+			accessor: 'capacity',
+			header: 'Capacity'
 		}),
 		tableData.column({
-			accessor: 'enrolled_courses',
-			header: 'Enrolled Courses',
-			filter: {
-				exclude: true
-			}
+			accessor: 'waitlisted',
+			header: 'Waitlisted'
 		}),
 		tableData.column({
-			accessor: 'GPA',
-			header: 'GPA',
-			filter: {
-				exclude: true
-			}
+			accessor: 'overridable',
+			header: 'Can Override'
+		}),
+		tableData.column({
+			accessor: 'current_instructor',
+			header: 'Instructor'
+		}),
+		tableData.column({
+			accessor: 'section_number',
+			header: 'Section'
 		})
 	]);
 
@@ -64,21 +58,8 @@
 	const { filterValue } = pluginStates.filter;
 </script>
 
-<Header content="Manage Students" />
-<div class="px-[5%] py-16">
-	<div>
-		<Breadcrumb.Root>
-			<Breadcrumb.List>
-				<Breadcrumb.Item>
-					<Breadcrumb.Link href="/dashboard/advisor">Dashboard</Breadcrumb.Link>
-				</Breadcrumb.Item>
-				<Breadcrumb.Separator />
-				<Breadcrumb.Item>
-					<Breadcrumb.Link href="/manage-students">Manage Students</Breadcrumb.Link>
-				</Breadcrumb.Item>
-			</Breadcrumb.List>
-		</Breadcrumb.Root>
-	</div>
+<Header content="Manage Courses" />
+<div class="p-[5%]">
 	<div class="flex items-center py-4">
 		<Input class="max-w-sm" placeholder="Search..." type="text" bind:value={$filterValue} />
 	</div>
