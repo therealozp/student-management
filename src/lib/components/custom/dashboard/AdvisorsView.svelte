@@ -1,10 +1,10 @@
 <script>
 	import { goto } from '$app/navigation';
 	const selections = [
-		{ section: 'Enrollment Management', url: '/enrollment-management' },
-		{ section: 'Student Report', url: '/student-report' },
+		{ section: 'Enrollment Management', url: 'manage/courses' },
+		{ section: 'Student Report', url: 'manage/students' },
 		{ section: 'What-if GPA', url: '/what-if-gpa' },
-		{ section: 'Department Statistics', url: '/department-statistics' }
+		{ section: 'Department Statistics', url: 'department-statistics' }
 	];
 </script>
 
@@ -17,19 +17,19 @@
 			<button
 				class="duration-300hover:brightness-110 flex h-[20%] min-h-[250px] items-center justify-center rounded-md border-2 border-stone-200 transition hover:bg-neutral-800"
 				on:click={() => {
-					goto('advisor' + link.url);
+					goto(link.url);
 				}}
 				on:keydown={(e) => {
 					if (e.key === 'Enter' || e.key === ' ') {
-						goto('advisor' + link.url);
+						goto(link.url);
 					}
 				}}
 				role="link"
 				aria-label={link.section}
 			>
-				<p>
+				<h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
 					{link.section}
-				</p>
+				</h4>
 			</button>
 		{/each}
 	</div>
