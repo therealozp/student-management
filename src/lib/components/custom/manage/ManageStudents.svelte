@@ -64,7 +64,7 @@
 	const { filterValue } = pluginStates.filter;
 </script>
 
-<Header content="Manage Students" />
+<Header content="Manage Students - Advisor's View" />
 <div class="px-[5%] py-16">
 	<div>
 		<Breadcrumb.Root>
