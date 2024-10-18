@@ -76,3 +76,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.main-image {
+  background-image: url('vector.gif');
+  background-size: cover;
+  height: 100vh;
+  filter: brightness(100%) contrast(150%)
+}
