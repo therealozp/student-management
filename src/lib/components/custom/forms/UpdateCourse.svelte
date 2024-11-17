@@ -38,6 +38,9 @@
 
 <Layout>
 	<div>
+		<h2 class="mb-8 scroll-m-20 text-4xl font-semibold tracking-tight transition-colors">
+			Edit course information
+		</h2>
 		<div class="my-4 grid grid-cols-2">
 			<div class="w-[300px]">
 				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">CRN</h2>
@@ -128,5 +131,12 @@
 			<Button class="font-bold">Save changes</Button>
 			<Button class="font-bold" variant="outline">Discard Changes</Button>
 		</div>
+		<h2 class="mb-8 mt-16 scroll-m-20 text-4xl font-semibold tracking-tight transition-colors">
+			Manage enrollments/instructors
+		</h2>
+		<a class="underline" href="/dashboard/manage/enroll/student"><p>Enroll a student</p></a>
+		<a class="underline" href="/dashboard/manage/enroll/instructor"
+			><p>Edit instructor settings</p></a
+		>
 	</div>
 </Layout>
