@@ -8,6 +8,7 @@
 	import { createTable, Subscribe, Render } from 'svelte-headless-table';
 	import { addPagination, addTableFilter } from 'svelte-headless-table/plugins';
 	import { readable } from 'svelte/store';
+	import { goto } from '$app/navigation';
 
 	const tableHeaders = Object.keys(courses[0]);
 	const tableData = createTable(readable(courses), {
@@ -62,6 +63,9 @@
 <div class="p-[5%]">
 	<div class="flex items-center py-4">
 		<Input class="max-w-sm" placeholder="Search..." type="text" bind:value={$filterValue} />
+		<Button class="ml-8" on:click={() => goto('/dashboard/manage/courses/new/')}
+			>Add a new Course</Button
+		>
 	</div>
 	<div>
 		<Table.Root {...$tableAttrs}>
@@ -83,7 +87,13 @@
 			<Table.Body {...$tableBodyAttrs}>
 				{#each $pageRows as row (row.id)}
 					<Subscribe rowAttrs={row.attrs()} let:rowAttrs>
-						<Table.Row {...rowAttrs}>
+						<Table.Row
+							{...rowAttrs}
+							on:click={() => {
+								goto('/dashboard/manage/courses/' + row.original['CRN']);
+							}}
+							class="cursor-pointer"
+						>
 							{#each row.cells as cell (cell.id)}
 								<Subscribe attrs={cell.attrs()} let:attrs>
 									<Table.Cell {...attrs}>

@@ -1,14 +1,12 @@
 <script>
-	import Card from '$lib/components/ui/card/card.svelte';
-	import Button from '$lib/components/ui/button/button.svelte';
 	import { goto } from '$app/navigation';
 
 	const items = [
-		{ name: 'Manage Courses', link: 'manage/courses' },
-		{ name: 'Manage Instructors', link: 'manage/instructors' },
+		{ name: 'Manage Courses', link: '/dashboard/manage/courses' },
+		{ name: 'Manage Instructors', link: '/dashboard/manage/instructors' },
 		{ name: 'Manage Students', link: 'manage/students' },
-		{ name: 'Department Statistics', link: 'statistics' },
-		{ name: 'View Reports', link: '/admin/reports' },
+		{ name: 'Department Statistics', link: '/dashboard/statistics/department' },
+		{ name: 'Major Ranking Statistics', link: '/dashboard/statistics/major' },
 		{ name: 'Audit Logs', link: '/admin/logs' }
 	];
 </script>

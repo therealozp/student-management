@@ -4,4 +4,5 @@
 </script>
 
 <Header content="Schedule Search" />
+
 <ScheduleSearch />

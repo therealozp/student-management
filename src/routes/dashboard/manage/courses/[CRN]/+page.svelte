@@ -1,7 +1,10 @@
 <script>
 	import Header from '$lib/components/custom/dashboard/Header.svelte';
 	import UpdateCourse from '$lib/components/custom/forms/UpdateCourse.svelte';
+	import { page } from '$app/stores';
+
+	const { CRN } = $page.params;
 </script>
 
 <Header content="Update Course" />
-<UpdateCourse />
+<UpdateCourse crn={CRN} />

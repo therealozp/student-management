@@ -1,10 +1,10 @@
 <script>
 	import { goto } from '$app/navigation';
 	const selections = [
-		{ section: 'Enrollment Management', url: 'manage/courses' },
+		{ section: 'Add/Drop Student', url: '/dashboard/manage/add-drop/student' },
+		{ section: 'Look for a Class', url: '/dashboard/schedule/' },
 		{ section: 'Student Report', url: 'manage/students' },
-		{ section: 'What-if GPA', url: '/what-if-gpa' },
-		{ section: 'Department Statistics', url: 'department-statistics' }
+		{ section: 'What-if GPA', url: '/what-if-gpa' }
 	];
 </script>
 

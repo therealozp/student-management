@@ -1,5 +1,5 @@
 <script>
-	import ManageEnrollments from '$lib/components/custom/manage/ManageEnrollments.svelte';
+	import ManageCourses from '$lib/components/custom/manage/ManageCourses.svelte';
 </script>
 
-<ManageEnrollments />
+<ManageCourses />

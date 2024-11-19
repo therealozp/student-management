@@ -6,48 +6,26 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Layout from '../ui/Layout.svelte';
 
-	export let crn;
-	let courseInformation = {
-		course_name: 'Object-Oriented Programming',
-		course_prefix: 'COP',
-		course_number: '1231',
-		course_description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic illum eum dolorum quasi vel assumenda repellendus facere ex, ab excepturi fugit esse quis unde aperiam facilis laudantium repellat doloremque beatae.',
-		CRN: crn,
-		capacity: 81,
+	let newCourse = {
+		course_name: '',
+		course_prefix: '',
+		course_number: '',
+		course_description: '',
+		CRN: '', // Optional; typically generated server-side
+		capacity: 0,
 		overridable: false,
-		waitlisted: 2,
-		current_instructor: 'Instructor 2',
-		section_number: '001',
-		is_offered: true
+		waitlisted: 0,
+		current_instructor: '',
+		section_number: '',
+		is_offered: false
 	};
 
-	let name = courseInformation.course_name;
-	let capacity = courseInformation.capacity;
-	let currentCode = courseInformation.course_prefix;
-
-	let courseNumber = courseInformation.course_number;
 	let availableCodes = ['CAP', 'COP', 'CDA', 'COT', 'CEN'];
-
-	// should be instructors in the same department e.g. CSE
-	let currentInstructor = courseInformation.current_instructor;
-	let instructors = ['ins 1', 'ins 2', 'ins 3', 'ins 4'];
-
-	let currentlyOffered = courseInformation.is_offered;
-	let currentDescription = courseInformation.course_description;
+	let instructors = ['Instructor 1', 'Instructor 2', 'Instructor 3', 'Instructor 4'];
 </script>
 
 <Layout>
 	<div>
-		<h2 class="mb-8 scroll-m-20 text-4xl font-semibold tracking-tight transition-colors">
-			Edit course information
-		</h2>
-		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">CRN</h2>
-			</div>
-			<Input value={courseInformation.CRN} readonly disabled />
-		</div>
 		<div class="my-4 grid grid-cols-2">
 			<div class="w-[300px]">
 				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
@@ -55,8 +33,8 @@
 				</h2>
 			</div>
 			<div class="flex items-center">
-				<Checkbox bind:checked={currentlyOffered} class="mr-4" />
-				<p>{currentlyOffered ? 'Yes' : 'No'}</p>
+				<Checkbox bind:checked={newCourse.is_offered} class="mr-4" />
+				<p>{newCourse.is_offered ? 'Yes' : 'No'}</p>
 			</div>
 		</div>
 		<div class="my-4 grid grid-cols-2">
@@ -65,7 +43,7 @@
 					Course Name
 				</h2>
 			</div>
-			<Input bind:value={name} />
+			<Input bind:value={newCourse.course_name} placeholder="Enter course name" />
 		</div>
 		<div class="my-4 grid grid-cols-2">
 			<div class="w-[300px]">
@@ -74,9 +52,9 @@
 				</h2>
 			</div>
 			<div class="flex items-center">
-				<Select.Root bind:selected={currentCode}>
+				<Select.Root bind:selected={newCourse.course_prefix}>
 					<Select.Trigger class="w-[180px]">
-						<Select.Value placeholder={currentCode} />
+						<Select.Value placeholder="Select Code" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Group>
@@ -88,7 +66,7 @@
 					</Select.Content>
 					<Select.Input name="Course Code" />
 				</Select.Root>
-				<Input bind:value={courseNumber} />
+				<Input bind:value={newCourse.course_number} placeholder="Course Number" />
 			</div>
 		</div>
 		<div class="my-4 grid grid-cols-2">
@@ -97,7 +75,7 @@
 					Course Description
 				</h2>
 			</div>
-			<Input bind:value={currentDescription} />
+			<Input bind:value={newCourse.course_description} placeholder="Enter course description" />
 		</div>
 		<div class="my-4 grid grid-cols-2">
 			<div class="w-[300px]">
@@ -105,9 +83,9 @@
 					Instructor
 				</h2>
 			</div>
-			<Select.Root bind:selected={currentInstructor}>
+			<Select.Root bind:selected={newCourse.current_instructor}>
 				<Select.Trigger class="w-[180px]">
-					<Select.Value placeholder={currentInstructor} />
+					<Select.Value placeholder="Select Instructor" />
 				</Select.Trigger>
 				<Select.Content>
 					<Select.Group>
@@ -126,18 +104,18 @@
 					Capacity
 				</h2>
 			</div>
-			<Input type="number" min="0" max="999" step="1" bind:value={capacity} />
+			<Input
+				type="number"
+				min="0"
+				max="999"
+				step="1"
+				bind:value={newCourse.capacity}
+				placeholder="Enter capacity"
+			/>
 		</div>
 		<div>
-			<Button class="font-bold">Save changes</Button>
-			<Button class="font-bold" variant="outline">Discard Changes</Button>
+			<Button class="font-bold">Add Course</Button>
+			<Button class="ml-4 font-bold" variant="outline">Cancel</Button>
 		</div>
-		<h2 class="mb-8 mt-16 scroll-m-20 text-4xl font-semibold tracking-tight transition-colors">
-			Manage enrollments/instructors
-		</h2>
-		<a class="underline" href="/dashboard/manage/enroll/student"><p>Enroll a student</p></a>
-		<a class="underline" href="/dashboard/manage/enroll/instructor"
-			><p>Edit instructor settings</p></a
-		>
 	</div>
 </Layout>

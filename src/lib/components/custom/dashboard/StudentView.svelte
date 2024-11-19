@@ -41,7 +41,11 @@
 					{studentAttributes.gpa}
 				</h2>
 			</div>
-			<h2 class="absolute bottom-4 right-4 text-sm text-muted-foreground">what-if GPA</h2>
+			<a href="/what-if-gpa"
+				><p class="absolute bottom-4 right-4 text-sm text-muted-foreground underline">
+					what-if GPA
+				</p></a
+			>
 		</div>
 		<div class="p-8">
 			<div class="grid grid-cols-3 gap-8">
