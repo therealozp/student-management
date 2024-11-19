@@ -56,6 +56,7 @@
 	const { headerRows, pageRows, tableAttrs, tableBodyAttrs, pluginStates } =
 		tableData.createViewModel(columns);
 	const { hasNextPage, hasPreviousPage, pageIndex } = pluginStates.paginate;
+
 	const { filterValue } = pluginStates.filter;
 </script>
 
