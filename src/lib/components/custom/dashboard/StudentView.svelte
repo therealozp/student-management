@@ -1,7 +1,7 @@
 <script>
 	import Layout from '../ui/Layout.svelte';
 	import KeyValue from '../ui/KeyValue.svelte';
-	import { userObject } from '$lib/store/userStore';
+	import { userObject } from '$lib/store/constuserStore';
 
 	import { courseDatabase } from '$lib/store/courseStore';
 	import StudentsCourses from './StudentsCourses.svelte';
