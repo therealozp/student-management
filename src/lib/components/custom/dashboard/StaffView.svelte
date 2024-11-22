@@ -4,7 +4,7 @@
 	const items = [
 		{ name: 'Manage Courses', link: '/dashboard/manage/courses' },
 		{ name: 'Manage Instructors', link: '/dashboard/manage/instructors' },
-		{ name: 'Manage Students', link: 'manage/students' },
+		{ name: 'Manage Students', link: '/dashboard/manage/students' },
 		{ name: 'Department Statistics', link: '/dashboard/statistics/department' },
 		{ name: 'Major Ranking Statistics', link: '/dashboard/statistics/major' },
 		{ name: 'Audit Logs', link: '/admin/logs' }

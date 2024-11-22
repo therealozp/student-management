@@ -1,6 +1,7 @@
 <script>
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 </script>
 
 <div class="main-image flex h-screen w-screen flex-col items-center justify-center">

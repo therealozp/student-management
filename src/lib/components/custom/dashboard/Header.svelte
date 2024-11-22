@@ -1,9 +1,32 @@
 <script>
 	import Separator from '$lib/components/ui/separator/separator.svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import { goto } from '$app/navigation';
 	export let content;
+
+	function logout() {
+		const res = fetch('/api/logout', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		if (res.ok) {
+			console.log('Logout successful');
+		} else {
+			console.error('Logout failed');
+		}
+		goto('/');
+	}
 </script>
 
 <div class="min-w-screen">
+	<Button
+		class="absolute right-[5%] top-4"
+		on:click={() => {
+			logout();
+		}}>Logout</Button
+	>
 	<div class="ml-[5%] flex h-[200px] items-center">
 		<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
 			{content ? content : 'Welcome, [Name]'}
