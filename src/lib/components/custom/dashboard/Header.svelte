@@ -1,22 +1,11 @@
 <script>
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { goto } from '$app/navigation';
+	import { signOut } from '@auth/sveltekit/client';
 	export let content;
 
 	function logout() {
-		const res = fetch('/api/logout', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		});
-		if (res.ok) {
-			console.log('Logout successful');
-		} else {
-			console.error('Logout failed');
-		}
-		goto('/');
+		signOut({ callbackUrl: '/' });
 	}
 </script>
 
