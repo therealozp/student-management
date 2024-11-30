@@ -1,125 +1,101 @@
 <script>
-	import * as Table from '$lib/components/ui/table/index.js';
 	import Header from '../dashboard/Header.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 
-	import courses from '$lib/dummy_data/fake_enrollment_sections.json';
-	import { createTable, Subscribe, Render } from 'svelte-headless-table';
-	import { addPagination, addTableFilter } from 'svelte-headless-table/plugins';
-	import { readable } from 'svelte/store';
-	import { goto } from '$app/navigation';
+	import { createTable, createRender } from 'svelte-headless-table';
+	import { addPagination } from 'svelte-headless-table/plugins';
+	import { writable } from 'svelte/store';
 
-	const tableHeaders = Object.keys(courses[0]);
-	const tableData = createTable(readable(courses), {
-		paginate: addPagination(),
-		filter: addTableFilter({
-			fn: ({ filterValue, value }) => value.toLowerCase().includes(filterValue.toLowerCase())
-		})
+	import CoursesTableActions from './CoursesTableActions.svelte'; // Optional for any specific actions on courses.
+	import StudentsCourses from '../dashboard/StudentsCourses.svelte';
+	import { onMount } from 'svelte';
+
+	export let user;
+
+	const tableStore = writable([]); // Initialize table store with writable.
+	let tableData;
+	let columns;
+
+	let searchQuery = '';
+
+	// Fetch all courses and populate the table, defaulting to no filter when searchQuery is empty.
+	const fetchCourses = async () => {
+		const response = await fetch(`/api/staff/courses`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ user_id: user.user_id, searchQuery })
+		});
+		const data = await response.json();
+		tableStore.set(data); // Update store.
+		console.log(data); // Verify fetched data.
+	};
+
+	// Create the table instance with pagination.
+	tableData = createTable(tableStore, {
+		paginate: addPagination()
 	});
 
-	const columns = tableData.createColumns([
+	// Define columns.
+	columns = tableData.createColumns([
 		tableData.column({
 			accessor: 'CRN',
 			header: 'CRN'
-		}),
-		tableData.column({
-			accessor: 'course_code',
-			header: 'Course Code'
 		}),
 		tableData.column({
 			accessor: 'course_name',
 			header: 'Course Name'
 		}),
 		tableData.column({
+			accessor: 'prefix',
+			header: 'Prefix'
+		}),
+		tableData.column({
+			accessor: 'course_number',
+			header: 'Course Number'
+		}),
+		tableData.column({
 			accessor: 'capacity',
 			header: 'Capacity'
 		}),
 		tableData.column({
-			accessor: 'waitlisted',
-			header: 'Waitlisted'
+			accessor: 'enrolled',
+			header: 'Enrolled'
 		}),
 		tableData.column({
-			accessor: 'overridable',
-			header: 'Can Override'
-		}),
-		tableData.column({
-			accessor: 'current_instructor',
+			accessor: 'instructor_name',
 			header: 'Instructor'
+		}),
+		tableData.column({
+			accessor: 'department_name',
+			header: 'Department'
 		}),
 		tableData.column({
 			accessor: 'section_number',
 			header: 'Section'
+		}),
+		tableData.column({
+			accessor: ({ CRN }) => CRN,
+			header: '',
+			cell: ({ value }) => createRender(CoursesTableActions, { crn: value }) // Optional action buttons for each course.
 		})
 	]);
 
-	const { headerRows, pageRows, tableAttrs, tableBodyAttrs, pluginStates } =
-		tableData.createViewModel(columns);
-	const { hasNextPage, hasPreviousPage, pageIndex } = pluginStates.paginate;
-
-	const { filterValue } = pluginStates.filter;
+	onMount(() => {
+		fetchCourses(); // Fetch courses on mount.
+	});
 </script>
 
 <Header content="Manage Courses" />
-<div class="p-[5%]">
+<div class="px-[5%] py-16">
 	<div class="flex items-center py-4">
-		<Input class="max-w-sm" placeholder="Search..." type="text" bind:value={$filterValue} />
-		<Button class="ml-8" on:click={() => goto('/dashboard/manage/courses/new/')}
-			>Add a new Course</Button
-		>
+		<Input class="max-w-sm" placeholder="Search Courses..." type="text" bind:value={searchQuery} />
+		<Button class="ml-4" on:click={() => fetchCourses()}>Search</Button>
 	</div>
 	<div>
-		<Table.Root {...$tableAttrs}>
-			<Table.Header>
-				{#each $headerRows as headerRow}
-					<Subscribe rowAttrs={headerRow.attrs()}>
-						<Table.Row>
-							{#each headerRow.cells as cell (cell.id)}
-								<Subscribe attrs={cell.attrs()} let:attrs props={cell.props()}>
-									<Table.Head {...attrs}>
-										<Render of={cell.render()} />
-									</Table.Head>
-								</Subscribe>
-							{/each}
-						</Table.Row>
-					</Subscribe>
-				{/each}
-			</Table.Header>
-			<Table.Body {...$tableBodyAttrs}>
-				{#each $pageRows as row (row.id)}
-					<Subscribe rowAttrs={row.attrs()} let:rowAttrs>
-						<Table.Row
-							{...rowAttrs}
-							on:click={() => {
-								goto('/dashboard/manage/courses/' + row.original['CRN']);
-							}}
-							class="cursor-pointer"
-						>
-							{#each row.cells as cell (cell.id)}
-								<Subscribe attrs={cell.attrs()} let:attrs>
-									<Table.Cell {...attrs}>
-										<Render of={cell.render()} />
-									</Table.Cell>
-								</Subscribe>
-							{/each}
-						</Table.Row>
-					</Subscribe>
-				{/each}
-			</Table.Body>
-		</Table.Root>
-	</div>
-	<div class="flex items-center justify-end space-x-4 py-4">
-		<Button
-			variant="outline"
-			size="sm"
-			on:click={() => ($pageIndex = $pageIndex - 1)}
-			disabled={!$hasPreviousPage}>Previous</Button
-		>
-		<Button
-			variant="outline"
-			size="sm"
-			disabled={!$hasNextPage}
-			on:click={() => ($pageIndex = $pageIndex + 1)}>Next</Button
-		>
+		<StudentsCourses {tableData} {columns} />
+		<!-- Table rendering for courses -->
 	</div>
 </div>

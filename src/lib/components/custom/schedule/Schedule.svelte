@@ -1,7 +1,4 @@
 <script>
-	import * as Table from '$lib/components/ui/table/index.js';
-	import Input from '$lib/components/ui/input/input.svelte';
-	import Button from '$lib/components/ui/button/button.svelte';
 	import { createTable, Subscribe, Render } from 'svelte-headless-table';
 	import { addPagination } from 'svelte-headless-table/plugins';
 	import { readable } from 'svelte/store';

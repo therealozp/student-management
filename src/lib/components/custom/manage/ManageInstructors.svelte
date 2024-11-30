@@ -8,7 +8,7 @@
 	import { writable } from 'svelte/store';
 
 	import StudentsCourses from '../dashboard/StudentsCourses.svelte';
-	import StudentTableActions from './StudentTableActions.svelte';
+	import InstructorTableActions from './InstructorTableActions.svelte';
 	import { onMount } from 'svelte';
 
 	export let user;
@@ -19,13 +19,13 @@
 
 	let searchQuery = '';
 
-	const fetchStudents = async () => {
-		const response = await fetch(`/api/advisor/students`, {
+	const fetchInstructors = async () => {
+		const response = await fetch(`/api/staff/instructors/query`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ user_id: user.user_id, searchQuery })
+			body: JSON.stringify({ staff_id: user.user_id, searchQuery })
 		});
 		const data = await response.json();
 		tableStore.set(data);
@@ -50,46 +50,28 @@
 			header: 'Email'
 		}),
 		tableData.column({
-			accessor: 'dob',
-			header: 'Date of Birth',
-			cell: ({ value }) => {
-				return new Date(value).toLocaleDateString();
-			}
-		}),
-		tableData.column({
-			accessor: 'gpa',
-			header: 'GPA',
-			cell: ({ value }) => {
-				return value.toFixed(2);
-			}
-		}),
-		tableData.column({
-			accessor: 'year',
-			header: 'Year'
-		}),
-		tableData.column({
-			accessor: 'major',
-			header: 'Major'
+			accessor: 'department_name',
+			header: 'Department'
 		}),
 		tableData.column({
 			accessor: ({ user_id }) => user_id,
 			header: '',
 			cell: ({ value }) => {
-				return createRender(StudentTableActions, { student_id: value });
+				return createRender(InstructorTableActions, { instructor_id: value });
 			}
 		})
 	]);
 
 	onMount(() => {
-		fetchStudents();
+		fetchInstructors();
 	});
 </script>
 
-<Header content="Manage Students - Advisor's View" />
+<Header content="Manage Instructors" />
 <div class="px-[5%] py-16">
 	<div class="flex items-center py-4">
 		<Input class="max-w-sm" placeholder="Search..." type="text" bind:value={searchQuery} />
-		<Button class="ml-4" on:click={() => fetchStudents()}>Search</Button>
+		<Button class="ml-4" on:click={() => fetchInstructors()}>Search</Button>
 	</div>
 	<div>
 		<StudentsCourses {tableData} {columns} />

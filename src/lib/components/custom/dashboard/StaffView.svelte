@@ -7,6 +7,8 @@
 		{ name: 'Manage Students', link: '/dashboard/manage/students' },
 		{ name: 'Department Statistics', link: '/dashboard/statistics/department' },
 		{ name: 'Major Ranking Statistics', link: '/dashboard/statistics/major' },
+		{ name: 'Instructor Statistics', link: '/dashboard/statistics/instructor' },
+		{ name: 'Semester Statistics', link: '/dashboard/statistics/semester' },
 		{ name: 'Audit Logs', link: '/admin/logs' }
 	];
 </script>

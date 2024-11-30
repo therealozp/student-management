@@ -4,7 +4,8 @@
 	import { page } from '$app/stores';
 
 	const { CRN } = $page.params;
+	const userToken = $page.data?.session?.user;
 </script>
 
 <Header content="Update Course" />
-<UpdateCourse crn={CRN} />
+<UpdateCourse crn={CRN} user={userToken} />

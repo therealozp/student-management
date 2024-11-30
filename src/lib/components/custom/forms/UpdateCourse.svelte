@@ -1,143 +1,145 @@
 <script>
-	import Header from '../dashboard/Header.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import * as Select from '$lib/components/ui/select';
-	import Checkbox from '$lib/components/ui/checkbox/checkbox.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Layout from '../ui/Layout.svelte';
+	import { onMount } from 'svelte';
+	import { toast } from 'svelte-sonner';
 
 	export let crn;
+	export let user;
+
+	async function fetchCourseByCRN(crn) {
+		const res = await fetch(`/api/courses/`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ crn })
+		});
+		const course = await res.json();
+		console.log(course);
+		return course[0];
+	}
+
+	async function fetchInstructors() {
+		const res = await fetch(`/api/staff/instructors/`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ staff_id: user.user_id })
+		});
+		const instructors = await res.json();
+		const instructorSelections = instructors.map((ins) => {
+			return { value: ins.user_id, label: ins.name };
+		});
+		return instructorSelections;
+	}
+
 	let courseInformation = {
-		course_name: 'Object-Oriented Programming',
-		course_prefix: 'COP',
-		course_number: '1231',
-		course_description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic illum eum dolorum quasi vel assumenda repellendus facere ex, ab excepturi fugit esse quis unde aperiam facilis laudantium repellat doloremque beatae.',
-		CRN: crn,
-		capacity: 81,
-		overridable: false,
-		waitlisted: 2,
-		current_instructor: 'Instructor 2',
-		section_number: '001',
-		is_offered: true
+		CRN: '',
+		course_name: '',
+		prefix: '',
+		course_number: '',
+		capacity: 0,
+		current_instructor: ''
 	};
 
-	let name = courseInformation.course_name;
-	let capacity = courseInformation.capacity;
-	let currentCode = courseInformation.course_prefix;
+	let name = '';
+	let capacity = 0;
+	let prefix = '';
+	let courseNumber = '';
+	let currentInstructor;
+	let instructors = [];
 
-	let courseNumber = courseInformation.course_number;
-	let availableCodes = ['CAP', 'COP', 'CDA', 'COT', 'CEN'];
+	// Load data on mount
+	onMount(async () => {
+		const course = await fetchCourseByCRN(crn);
+		if (course) {
+			courseInformation = course;
+			name = course.course_name;
+			capacity = course.capacity;
+			prefix = course.prefix;
+			courseNumber = course.course_number;
+			currentInstructor = {
+				value: course.instructor_id,
+				label: course.instructor_name
+			};
+		}
 
-	// should be instructors in the same department e.g. CSE
-	let currentInstructor = courseInformation.current_instructor;
-	let instructors = ['ins 1', 'ins 2', 'ins 3', 'ins 4'];
+		instructors = await fetchInstructors();
+	});
 
-	let currentlyOffered = courseInformation.is_offered;
-	let currentDescription = courseInformation.course_description;
+	async function saveChanges() {
+		const updatedCourse = {
+			crn: courseInformation.CRN,
+			course_name: name,
+			prefix,
+			course_number: courseNumber,
+			capacity,
+			instructor_id: currentInstructor.value
+		};
+		console.log(updatedCourse);
+		const res = await fetch(`/api/staff/courses/update`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(updatedCourse)
+		});
+
+		if (res.ok) {
+			toast.success('Course updated successfully.');
+		} else {
+			toast.error('You are a failure.');
+		}
+	}
 </script>
 
 <Layout>
 	<div>
-		<h2 class="mb-8 scroll-m-20 text-4xl font-semibold tracking-tight transition-colors">
-			Edit course information
-		</h2>
+		<h2 class="mb-8 text-4xl font-semibold">Edit Course Information</h2>
 		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">CRN</h2>
-			</div>
+			<div>CRN</div>
 			<Input value={courseInformation.CRN} readonly disabled />
 		</div>
 		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
-					Offered?
-				</h2>
-			</div>
-			<div class="flex items-center">
-				<Checkbox bind:checked={currentlyOffered} class="mr-4" />
-				<p>{currentlyOffered ? 'Yes' : 'No'}</p>
-			</div>
-		</div>
-		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
-					Course Name
-				</h2>
-			</div>
+			<div>Course Name</div>
 			<Input bind:value={name} />
 		</div>
 		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
-					Course Code
-				</h2>
-			</div>
-			<div class="flex items-center">
-				<Select.Root bind:selected={currentCode}>
-					<Select.Trigger class="w-[180px]">
-						<Select.Value placeholder={currentCode} />
-					</Select.Trigger>
-					<Select.Content>
-						<Select.Group>
-							<Select.Label>Codes</Select.Label>
-							{#each availableCodes as code}
-								<Select.Item value={code} label={code} />
-							{/each}
-						</Select.Group>
-					</Select.Content>
-					<Select.Input name="Course Code" />
-				</Select.Root>
-				<Input bind:value={courseNumber} />
-			</div>
+			<div>Prefix</div>
+			<Input bind:value={prefix} />
 		</div>
 		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
-					Course Description
-				</h2>
-			</div>
-			<Input bind:value={currentDescription} />
+			<div>Course Number</div>
+			<Input bind:value={courseNumber} />
 		</div>
 		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
-					Instructor
-				</h2>
-			</div>
+			<div>Instructor</div>
 			<Select.Root bind:selected={currentInstructor}>
-				<Select.Trigger class="w-[180px]">
+				<Select.Trigger>
 					<Select.Value placeholder={currentInstructor} />
 				</Select.Trigger>
 				<Select.Content>
 					<Select.Group>
-						<Select.Label>Faculty</Select.Label>
+						<Select.Label>Instructors</Select.Label>
 						{#each instructors as ins}
-							<Select.Item value={ins} label={ins} />
+							<Select.Item value={ins.value} label={ins.label} />
 						{/each}
 					</Select.Group>
 				</Select.Content>
-				<Select.Input name="Faculty" />
+				<Select.Input name="Instructor" />
 			</Select.Root>
 		</div>
 		<div class="my-4 grid grid-cols-2">
-			<div class="w-[300px]">
-				<h2 class="scroll-m-20 text-2xl font-semibold tracking-tight transition-colors">
-					Capacity
-				</h2>
-			</div>
-			<Input type="number" min="0" max="999" step="1" bind:value={capacity} />
+			<div>Capacity</div>
+			<Input type="number" min="0" bind:value={capacity} />
 		</div>
 		<div>
-			<Button class="font-bold">Save changes</Button>
+			<Button class="font-bold" on:click={saveChanges}>Save Changes</Button>
 			<Button class="font-bold" variant="outline">Discard Changes</Button>
 		</div>
-		<h2 class="mb-8 mt-16 scroll-m-20 text-4xl font-semibold tracking-tight transition-colors">
-			Manage enrollments/instructors
-		</h2>
-		<a class="underline" href="/dashboard/manage/enroll/student"><p>Enroll a student</p></a>
-		<a class="underline" href="/dashboard/manage/enroll/instructor"
-			><p>Edit instructor settings</p></a
-		>
 	</div>
 </Layout>

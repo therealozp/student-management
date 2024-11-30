@@ -11,13 +11,21 @@ export const POST = async ({ request }) => {
 	const courseNamePattern = name ? `%${name}%` : null;
 
 	const query = `
-        SELECT * 
-        FROM courses
-        WHERE
-            (CRN = ? OR ? IS NULL) AND
-            (course_name LIKE ? OR ? IS NULL) AND
-            (prefix = ? OR ? IS NULL) AND
-            (course_number = ? OR ? IS NULL)
+        SELECT 
+        c.*,
+        u.name AS instructor_name,
+        d.department_name
+      FROM 
+        courses c
+      JOIN 
+        users u ON c.instructor_id = u.user_id
+      JOIN 
+        departments d ON c.department_id = d.department_id
+		WHERE
+			(c.CRN = ? OR ? IS NULL) AND
+			(c.course_name LIKE ? OR ? IS NULL) AND
+			(c.prefix = ? OR ? IS NULL) AND
+			(c.course_number = ? OR ? IS NULL)
     `;
 
 	// Execute the query, passing parameters as needed
