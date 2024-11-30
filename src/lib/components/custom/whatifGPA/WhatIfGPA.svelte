@@ -1,14 +1,12 @@
 <script>
-	import * as Table from '$lib/components/ui/table';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Slider from '$lib/components/ui/slider/slider.svelte';
 	import * as Dialog from '$lib/components/ui/dialog/index';
-	import Header from '../dashboard/Header.svelte';
 
 	import StudentsCourses from '../dashboard/StudentsCourses.svelte';
 
-	import { createTable, Subscribe, Render } from 'svelte-headless-table';
+	import { createTable } from 'svelte-headless-table';
 	import { readable } from 'svelte/store';
 	import { addPagination } from 'svelte-headless-table/plugins';
 
@@ -127,8 +125,6 @@
 		}
 	}
 </script>
-
-<Header content="What-If GPA" />
 
 {#await fetchEnrollments()}
 	<div>Fetching data...</div>

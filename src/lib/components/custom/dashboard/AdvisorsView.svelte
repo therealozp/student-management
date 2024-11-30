@@ -1,10 +1,13 @@
 <script>
 	import { goto } from '$app/navigation';
+
+	// export let user;
+
 	const selections = [
 		{ section: 'Add/Drop Student', url: '/dashboard/manage/add-drop/student' },
 		{ section: 'Look for a Class', url: '/dashboard/schedule/' },
-		{ section: 'Student Report', url: 'manage/students' },
-		{ section: 'What-if GPA', url: '/what-if-gpa' }
+		{ section: 'Student Report', url: '/dashboard/manage/students' },
+		{ section: 'What-if GPA', url: '/dashboard/manage/students' }
 	];
 </script>
 

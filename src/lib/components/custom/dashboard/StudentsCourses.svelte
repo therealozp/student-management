@@ -6,13 +6,14 @@
 
 	export let tableData;
 	export let columns;
+	export let containerStyles;
 
 	const { headerRows, pageRows, tableAttrs, tableBodyAttrs, pluginStates } =
 		tableData.createViewModel(columns);
 	const { hasNextPage, hasPreviousPage, pageIndex } = pluginStates.paginate;
 </script>
 
-<div class="p-[5%]">
+<div class={containerStyles}>
 	<div>
 		<Table.Root {...$tableAttrs}>
 			<Table.Header>

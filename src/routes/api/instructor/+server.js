@@ -9,17 +9,14 @@ export const POST = async ({ request }) => {
 	const [rows] = await conn.execute(
 		`
   SELECT 
-      i.*, 
       u.user_id, u.email, u.name, u.role, u.department_id, u.u_number, u.dob, 
       d.department_name
-  FROM 
-      instructors i
-  JOIN 
-      users u ON i.user_id = u.user_id
+  FROM
+      users u
   JOIN 
       departments d ON u.department_id = d.department_id
   WHERE 
-      i.user_id = ?
+      u.user_id = ?
 `,
 		[user_id]
 	);

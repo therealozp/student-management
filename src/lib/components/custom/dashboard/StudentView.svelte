@@ -11,6 +11,7 @@
 	let coursesTableData;
 	let coursesTableColumns;
 
+	export let limitedPermissions = false;
 	export let user;
 	const fetchUserData = async () => {
 		const response = await fetch(`/api/student`, {
@@ -23,7 +24,6 @@
 			})
 		});
 		const data = await response.json();
-		// console.log(data);
 		return data;
 	};
 
@@ -97,7 +97,10 @@
 						{userObject.gpa.toFixed(2)}
 					</h2>
 				</div>
-				<a href="/what-if-gpa"
+				<a
+					href={limitedPermissions
+						? `/dashboard/manage/students/${user.user_id}/what-if-gpa`
+						: '/dashboard/what-if-gpa'}
 					><p class="absolute bottom-4 right-4 text-sm text-muted-foreground underline">
 						what-if GPA
 					</p></a
@@ -125,7 +128,11 @@
 			Courses
 		</h2>
 		{#await fetchUserEnrollments() then { coursesData, coursesTableData, coursesTableColumns }}
-			<StudentsCourses tableData={coursesTableData} columns={coursesTableColumns} />
+			<StudentsCourses
+				tableData={coursesTableData}
+				columns={coursesTableColumns}
+				containerStyles="p-[5%]"
+			/>
 		{/await}
 	</Layout>
 {/await}
