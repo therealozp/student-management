@@ -1,5 +1,6 @@
 import { initializeConnection } from '$lib/backend/initializeConnection';
 import { json, error } from '@sveltejs/kit';
+import { logQuery } from '$lib/backend/logQuery.js';
 
 export const POST = async ({ request }) => {
 	const conn = await initializeConnection();
@@ -50,6 +51,9 @@ export const POST = async ({ request }) => {
 			searchQuery,
 			searchQuery
 		]);
+
+		// Log the query operation
+		await logQuery(staff_id, 'VIEW', 'instructor', null, { searchQuery, advisorDeptId });
 
 		// Check if any instructors are found
 		if (instructorRows.length === 0) {

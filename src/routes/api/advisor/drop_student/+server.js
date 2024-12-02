@@ -1,5 +1,6 @@
 import { initializeConnection } from '$lib/backend/initializeConnection';
 import { json, error } from '@sveltejs/kit';
+import { logQuery } from '$lib/backend/logQuery';
 
 export const POST = async ({ request }) => {
 	const body = await request.json();
@@ -7,13 +8,16 @@ export const POST = async ({ request }) => {
 	const conn = await initializeConnection();
 
 	try {
-		// Verify teacher's and student's existence and department match
+		// Verify advisor's and student's existence and department match
 		const [teacher_rows] = await conn.execute(`SELECT * FROM users WHERE user_id = ?`, [
 			teacher_id
 		]);
+		await logQuery(teacher_id, 'VIEW', 'advisor', null, teacher_rows);
+
 		const [student_rows] = await conn.execute(`SELECT * FROM users WHERE email = ?`, [
 			student_email
 		]);
+		await logQuery(teacher_id, 'VIEW', 'student', null, student_rows);
 
 		if (teacher_rows[0].department_id != student_rows[0].department_id) {
 			return error(400, {
@@ -24,6 +28,7 @@ export const POST = async ({ request }) => {
 
 		// Check if the course exists
 		const [course_rows] = await conn.execute(`SELECT * FROM courses WHERE CRN = ?`, [course_crn]);
+		await logQuery(teacher_id, 'VIEW', 'course', null, course_rows);
 
 		if (course_rows.length == 0) {
 			return error(400, {
@@ -37,6 +42,7 @@ export const POST = async ({ request }) => {
 			`SELECT * FROM enrollments WHERE user_id = ? AND CRN = ?`,
 			[student_rows[0].user_id, course_crn]
 		);
+		await logQuery(teacher_id, 'VIEW', 'course', null, enrollment_rows);
 
 		if (enrollment_rows.length === 0) {
 			return error(400, {
@@ -50,6 +56,8 @@ export const POST = async ({ request }) => {
 			student_rows[0].user_id,
 			course_crn
 		]);
+		await logQuery(teacher_id, 'DELETE', 'enrollments', enrollment_rows, null);
+
 		conn.end();
 
 		return json({ message: 'Student successfully dropped from the course' });

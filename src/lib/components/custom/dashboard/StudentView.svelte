@@ -10,6 +10,7 @@
 	let courses;
 	let coursesTableData;
 	let coursesTableColumns;
+	let creditsTaken;
 
 	export let limitedPermissions = false;
 	export let user;
@@ -67,12 +68,10 @@
 				accessor: 'grade',
 				header: 'Grade',
 				cell: ({ value }) => (value ? value : 'IP')
-			}),
-			coursesTableData.column({
-				accessor: 'instructor'
 			})
 		]);
 
+		creditsTaken = data.reduce((acc, course) => acc + course.credits, 0);
 		return { data, coursesTableData, coursesTableColumns };
 	};
 </script>
@@ -117,7 +116,7 @@
 					</div>
 					<div>
 						<!-- <KeyValue key="Class" value={classStanding} /> -->
-						<KeyValue key="Credits Taken" value={userObject.creditsTaken} />
+						<KeyValue key="Credits Taken" value={creditsTaken} />
 					</div>
 				</div>
 			</div>

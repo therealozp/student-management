@@ -1,5 +1,6 @@
 import { initializeConnection } from '$lib/backend/initializeConnection';
 import { json } from '@sveltejs/kit';
+import { logQuery } from '$lib/backend/logQuery.js';
 
 export const POST = async ({ request }) => {
 	const { user_id } = await request.json();
@@ -27,7 +28,9 @@ WHERE
 		[user_id]
 	);
 
+	// Log the query
+	await logQuery(user_id, 'VIEW', 'enrollments', null, { user_id });
+
 	conn.end();
-	// console.log(rows);
 	return json(rows);
 };

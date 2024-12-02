@@ -1,5 +1,6 @@
 import { initializeConnection } from '$lib/backend/initializeConnection';
 import { json, error } from '@sveltejs/kit';
+import { logQuery } from '$lib/backend/logQuery';
 
 export const POST = async ({ request }) => {
 	const conn = await initializeConnection();
@@ -23,36 +24,36 @@ export const POST = async ({ request }) => {
 
 		// Base query for fetching courses
 		const baseQuery = `
-      SELECT 
-        c.CRN,
-        c.course_name,
-        c.prefix,
-        c.course_number,
-        c.capacity,
-        c.enrolled,
-        c.section_number,
-        c.credits,
-        c.schedule,
-        u.name AS instructor_name,
-        d.department_name
-      FROM 
-        courses c
-      JOIN 
-        users u ON c.instructor_id = u.user_id
-      JOIN 
-        departments d ON c.department_id = d.department_id
-      WHERE 
-        c.department_id = ?
-    `;
+	  SELECT 
+		c.CRN,
+		c.course_name,
+		c.prefix,
+		c.course_number,
+		c.capacity,
+		c.enrolled,
+		c.section_number,
+		c.credits,
+		c.schedule,
+		u.name AS instructor_name,
+		d.department_name
+	  FROM 
+		courses c
+	  JOIN 
+		users u ON c.instructor_id = u.user_id
+	  JOIN 
+		departments d ON c.department_id = d.department_id
+	  WHERE 
+		c.department_id = ?
+	`;
 
 		// Add filtering if searchQuery is provided
 		const filterClause = searchQuery
 			? `AND (
-            c.course_name LIKE CONCAT('%', ?, '%') OR
-            c.prefix LIKE CONCAT('%', ?, '%') OR
-            c.course_number LIKE CONCAT('%', ?, '%') OR
-            u.name LIKE CONCAT('%', ?, '%')
-          )`
+			c.course_name LIKE CONCAT('%', ?, '%') OR
+			c.prefix LIKE CONCAT('%', ?, '%') OR
+			c.course_number LIKE CONCAT('%', ?, '%') OR
+			u.name LIKE CONCAT('%', ?, '%')
+		  )`
 			: '';
 
 		const finalQuery = baseQuery + filterClause;
@@ -62,6 +63,12 @@ export const POST = async ({ request }) => {
 			: [staffDepartmentId];
 
 		const [course_rows] = await conn.execute(finalQuery, queryParams);
+
+		// Log the query
+		await logQuery(user_id, 'VIEW', 'courses', null, {
+			searchQuery,
+			department_id: staffDepartmentId
+		});
 
 		// Return results as JSON
 		return json(course_rows);

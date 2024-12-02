@@ -1,5 +1,6 @@
 import { initializeConnection } from '$lib/backend/initializeConnection';
 import { json, error } from '@sveltejs/kit';
+import { logQuery } from '$lib/backend/logQuery.js';
 
 export const POST = async ({ request }) => {
 	const body = await request.json();
@@ -9,41 +10,41 @@ export const POST = async ({ request }) => {
 	try {
 		const [advisor_dept] = await conn.execute(
 			`
-            SELECT 
-                department_id
-            FROM 
-                users
-            WHERE 
-                user_id = ?
-            `,
+			SELECT 
+				department_id
+			FROM 
+				users
+			WHERE 
+				user_id = ?
+			`,
 			[user_id]
 		);
 		const advisor_dept_id = advisor_dept[0].department_id;
 
 		// Query to search for students based on the search query
 		const query = `
-      SELECT 
-        u.user_id,
-        u.name,
-        u.email,
-        u.u_number,
-        u.dob,
-        s.major,
-        s.year,
-        s.gpa
-      FROM 
-        users u
-      JOIN 
-        students s ON u.user_id = s.user_id
-      WHERE 
-        u.role = 'student' 
-        AND u.department_id = ?
-        AND (
-          u.email LIKE CONCAT('%', ?, '%') OR
-          u.name LIKE CONCAT('%', ?, '%') OR
-          u.u_number LIKE CONCAT('%', ?, '%')
-        );
-    `;
+	  SELECT 
+		u.user_id,
+		u.name,
+		u.email,
+		u.u_number,
+		u.dob,
+		s.major,
+		s.year,
+		s.gpa
+	  FROM 
+		users u
+	  JOIN 
+		students s ON u.user_id = s.user_id
+	  WHERE 
+		u.role = 'student' 
+		AND u.department_id = ?
+		AND (
+		  u.email LIKE CONCAT('%', ?, '%') OR
+		  u.name LIKE CONCAT('%', ?, '%') OR
+		  u.u_number LIKE CONCAT('%', ?, '%')
+		);
+	`;
 
 		// Execute the query with searchQuery as the parameter
 		const [student_rows] = await conn.execute(query, [
@@ -53,13 +54,8 @@ export const POST = async ({ request }) => {
 			searchQuery
 		]);
 
-		// // Check if any students are found
-		// if (student_rows.length === 0) {
-		// 	return error(404, {
-		// 		message: 'No students found matching the search criteria',
-		// 		error_code: 'STUDENTS_NOT_FOUND'
-		// 	});
-		// }
+		// Log the query operation
+		await logQuery(user_id, 'VIEW', 'student', null, { searchQuery });
 
 		// Return the results as JSON
 		return json(student_rows);

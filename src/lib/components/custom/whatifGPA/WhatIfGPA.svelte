@@ -23,6 +23,7 @@
 		I: null, // Incomplete, not factored into GPA
 		W: null, // Withdrawal, not factored into GPA
 		WF: 0.0, // Withdrawal Failing, treated as an F
+		IP: 4,
 		null: null
 	};
 
@@ -76,7 +77,7 @@
 					return accumulator;
 				}
 			}, 0) / numCredits;
-
+		console.log(data);
 		return {
 			tableData,
 			columns
@@ -143,7 +144,7 @@
 			</h2>
 			<div class="m-8">
 				<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-					{currentGPA}
+					{currentGPA.toFixed(2)}
 				</h1>
 			</div>
 			<div class="w-full p-4">

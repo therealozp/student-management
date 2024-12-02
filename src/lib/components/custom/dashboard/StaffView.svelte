@@ -9,7 +9,7 @@
 		{ name: 'Major Ranking Statistics', link: '/dashboard/statistics/major' },
 		{ name: 'Instructor Statistics', link: '/dashboard/statistics/instructor' },
 		{ name: 'Semester Statistics', link: '/dashboard/statistics/semester' },
-		{ name: 'Audit Logs', link: '/admin/logs' }
+		{ name: 'Audit Logs', link: '/dashboard/audit-logs' }
 	];
 </script>
 
